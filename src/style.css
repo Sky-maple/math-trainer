@@ -1,0 +1,147 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #eef0f3;
+  --text: #1f2329;
+  --text-2: #5f6672;
+  --text-3: #9aa0a8;
+  --border: #e5e7eb;
+  --primary: #534ab7;
+  --primary-soft: #eeedfe;
+  --success: #0f6e56;
+  --success-soft: #e1f5ee;
+  --danger: #a32d2d;
+  --danger-soft: #fcebeb;
+  --warning: #854f0b;
+  --warning-soft: #faeeda;
+  --info: #185fa5;
+  --info-soft: #e6f1fb;
+}
+
+html.dark {
+  --bg: #141518;
+  --surface: #1c1e23;
+  --surface-2: #26282e;
+  --text: #e6e8eb;
+  --text-2: #a8adb6;
+  --text-3: #6b7078;
+  --border: #33363d;
+  --primary: #7f77dd;
+  --primary-soft: #2c2a44;
+  --success: #5dcaa5;
+  --success-soft: #12372c;
+  --danger: #f09595;
+  --danger-soft: #3a1d1d;
+  --warning: #ef9f27;
+  --warning-soft: #3a2c12;
+  --info: #85b7eb;
+  --info-soft: #132b40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 卡片 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+
+.card-sub {
+  font-size: 12px;
+  color: var(--text-2);
+  margin: -8px 0 14px;
+}
+
+/* 页面标题 */
+.page-head {
+  margin-bottom: 18px;
+}
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+.page-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  margin: 6px 0 0;
+}
+
+/* 工具类 */
+.muted {
+  color: var(--text-2);
+}
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.text-center { text-align: center; }
+.mono {
+  font-family: 'SF Mono', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  font-variant-ligatures: none;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .app-main {
+    padding: 12px 12px 40px;
+  }
+  .page-title {
+    font-size: 19px;
+  }
+  .card {
+    padding: 14px;
+  }
+}
