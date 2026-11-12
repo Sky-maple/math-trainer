@@ -10,10 +10,16 @@ const nav = [
   { path: '/', label: '仪表盘' },
   { path: '/train', label: '基础训练' },
   { path: '/timed', label: '限时挑战' },
+  { path: '/techniques', label: '心算技巧' },
   { path: '/mistakes', label: '错题本' },
   { path: '/stats', label: '统计' },
   { path: '/smart', label: '智能训练' }
 ]
+
+function isActive(path: string): boolean {
+  if (path === '/') return route.path === '/'
+  return route.path === path || route.path.startsWith(path + '/')
+}
 
 const themeIcon = computed(() => {
   if (settings.theme === 'light') return Sunny
@@ -40,7 +46,7 @@ function onTheme(cmd: string | number | object) {
           :key="item.path"
           :to="item.path"
           class="nav-link"
-          :class="{ active: route.path === item.path }"
+          :class="{ active: isActive(item.path) }"
         >
           {{ item.label }}
         </router-link>

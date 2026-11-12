@@ -9,7 +9,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit",
-    "verify": "node scripts/verify-generator.mjs"
+    "verify": "npm run verify:base && npm run verify:tech",
+    "verify:base": "node scripts/verify-generator.mjs",
+    "verify:tech": "node scripts/verify-techniques.mjs"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
